@@ -10,6 +10,7 @@ For JPA magic, must have a @Configuration Class annotated with @EntityScan, @Ena
 For Security, add spring-boot-starter-security and in application yaml security:
                                                                          basic:
                                                                            enabled: true
+
 To override default spring security user ( user) and password ( the one randomly generated each time at startup)  
 Add to application.yaml : security:
                             basic:
@@ -18,6 +19,16 @@ Add to application.yaml : security:
                               name: secured
                               password: passp
 
+for inMemory authentication: in WebSecurityConfigurerAdapter 
+ @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.inMemoryAuthentication()
+                .withUser("secureduser").password("passp").roles("USER").and()
+                .withUser("securedadmin").password("passa").roles("USER", "ADMIN")
+        ;
+    }
+
+                                                                               
     
 http://stackoverflow.com/questions/27614301/spring-boot-multiple-datasource
 http://xantorohara.blogspot.ie/2013/11/spring-boot-jdbc-with-multiple.html
