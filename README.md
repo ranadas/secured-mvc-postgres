@@ -19,3 +19,5 @@ Add to application.yaml : security:
                               password: passp
 
     
+http://stackoverflow.com/questions/27614301/spring-boot-multiple-datasource
+http://xantorohara.blogspot.ie/2013/11/spring-boot-jdbc-with-multiple.html

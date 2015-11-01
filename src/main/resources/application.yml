@@ -20,12 +20,12 @@ server:
   sessionTimeout: 30
   contextPath: /
 
-security:
-  basic:
-    enabled: true
-  user:
-    name: secured
-    password: passp
+#security:
+#  basic:
+#    enabled: true
+#  user:
+#    name: secured
+#    password: passp
 ---
 spring:
   profiles: qa

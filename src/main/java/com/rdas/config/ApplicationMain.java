@@ -13,7 +13,7 @@ public class ApplicationMain {
     private static final Logger log = LoggerFactory.getLogger(ApplicationMain.class);
 
     public static void main(String[] args) {
-        log.info("\n\n{} \n\n", "Spring Boot MVC start!!!!");
+        log.debug("\n\n{} \n\n", "Spring Boot MVC start!!!!");
         SpringApplication.run(new Object[]{ApplicationMain.class}, args);
     }
 }
