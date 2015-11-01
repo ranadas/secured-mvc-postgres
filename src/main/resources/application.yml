@@ -23,6 +23,9 @@ server:
 security:
   basic:
     enabled: true
+  user:
+    name: secured
+    password: passp
 ---
 spring:
   profiles: qa
