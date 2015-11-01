@@ -1,5 +1,6 @@
 # Core
 spring:
+  active: default
   profiles: default
   # The name of the application
   application.name: securedMvc
@@ -19,6 +20,9 @@ server:
   sessionTimeout: 30
   contextPath: /
 
+security:
+  basic:
+    enabled: true
 ---
 spring:
   profiles: qa
