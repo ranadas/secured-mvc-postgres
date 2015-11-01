@@ -3,10 +3,7 @@ package com.rdas.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
@@ -16,6 +13,7 @@ import java.io.Serializable;
 @Data
 @Entity
 @EqualsAndHashCode
+@Table(uniqueConstraints={@UniqueConstraint(columnNames={"username"})})
 public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
