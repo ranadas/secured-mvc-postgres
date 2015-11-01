@@ -1,0 +1,36 @@
+# Core
+spring:
+  profiles: default
+  # The name of the application
+  application.name: securedMvc
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/rdas
+    username: rdas
+    password: letmein
+  jpa:
+     show-sql: false
+     hibernate:
+       ddl-auto: update
+# Server settings (ServerProperties)
+server:
+  port: 9000
+  address: 127.0.0.1
+  sessionTimeout: 30
+  contextPath: /
+
+---
+spring:
+  profiles: qa
+  jpa:
+    show-sql: true
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:sendash;DB_CLOSE_DELAY=-1;
+    schemas: PUBLIC
+server:
+  port: 8081
+
+security:
+  basic:
+    enabled: true
